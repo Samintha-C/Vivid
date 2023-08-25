@@ -33,6 +33,7 @@ router.route('/').post(async(req, res) => {
     try{ 
         console.log('reaches post func')
         const { name, prompt, photo } = req.body;
+        console.log('1')
         const photoUrl = await cloudinary.uploader.upload(photo);
         console.log('cloudinary')
         const newPost = await Post.create({
